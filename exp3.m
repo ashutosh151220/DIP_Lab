@@ -1,0 +1,16 @@
+close all;
+clc;
+myimage = imread("Lenna_(test_image).jpg");
+mycolorimage = imresize(myimage,[256,256]);
+subplot(2,2,1);
+imshow(mycolorimage);
+mygrayimage = rgb2gray(mycolorimage);
+subplot(2,2,2);
+imshow(uint8(mygrayimage));
+title('Grey image - 8 bits');
+p = phantom('Modified Shepp-Logan',64);
+imshow(p);
+title('Synthetic image');
+subplot(2,2,3);
+imshow(mygrayimage,colormap(jet(256)));
+title('Pseudocolor image');

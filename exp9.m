@@ -1,0 +1,12 @@
+clc;
+clear all;
+close all;
+myimg=imread('desert.jpg');
+mygrayimage=rgb2gray(myimg);
+imshow(mygrayimage);
+mytimg=fft2(mygrayimage);
+figure;
+imshow(mytimg);
+myitimg=ifft2(mytimg);
+figure;
+imshow(uint8(myitimg));

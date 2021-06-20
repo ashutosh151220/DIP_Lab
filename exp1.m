@@ -1,0 +1,15 @@
+myimage = imread('desert.jpg' );
+mycolorimage = imresize(myimage,0.5,'nearest' );
+mygrayimage = rgb2gray(mycolorimage);
+mybinimage = imbinarize(mygrayimage);
+subplot(2,2,1);
+imshow(mycolorimage); title("original colour image " );
+subplot(2,2,2);
+imshow(mygrayimage); title("Grey image " );
+subplot(2,2,3);
+imshow(mybinimage); title("Binary image " );
+subplot(2,2,4);
+improfile(mygrayimage,[10,50],[45,100]);
+ylabel("Pixel value");
+xlabel("Distance");
+title("Intensity Profile of the given line");

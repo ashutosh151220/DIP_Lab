@@ -1,0 +1,22 @@
+clc;
+close all;
+myimage = imread("Published/flower.jpg");
+im_cr = imcrop(myimage,[75 68 130 112]);
+subplot(3,3,1);
+imshow(myimage);
+subplot(3,3,2);
+imshow(im_cr);
+im_rt = imrotate(myimage,90);
+subplot(3,3,3);
+imshow(im_rt);
+im_rt = imrotate(myimage,180);
+subplot(3,3,4);
+imshow(im_rt);
+subplot(3,3,5);
+im_ts = imtranslate(myimage,[80,90],'FillValues',255);
+pi = imshow(myimage);
+pi.Parent.Visible = 'on';
+subplot(3,3,6);
+op = imshow(im_ts);
+op.Parent.Visible = 'on';
+

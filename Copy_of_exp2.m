@@ -1,0 +1,36 @@
+myimage = imread('Lenna_(test_image).jpg');
+mycolourimage = imresize(myimage,[256,256] );
+subplot(4,3,1);
+imshow(mycolourimage);
+title('original Colour Image ' );
+myredimage = mycolourimage(:,:,1);
+subplot(4,3,2);
+imshow(myredimage);
+title('Red channel');
+subplot(4,3,3);
+imhist(myredimage);
+title('Red channel');
+mygreenimage = mycolourimage(:,:,2);
+subplot(4,3,4);
+imshow(mygreenimage);
+title('Green channel');
+subplot(4,3,5);
+imhist(mygreenimage);
+title('Green channel');
+myblueimage = mycolourimage(:,:,3);
+subplot(4,3,6);
+imshow(myblueimage);
+title('Blue channel');
+subplot(4,3,7);
+imhist(myblueimage);
+title('Blue channel');
+
+mygrayimage = rgb2gray(mycolourimage);
+subplot(4,3,8);
+imshow(uint8(mygrayimage));
+title('Grey image - 8 bits');
+myreducedimg = uint8(mygrayimage);
+myreducedresolutionimg = imresize(imresize(myreducedimg, 1/16), 16);
+subplot(4,3,9);
+imshow(myreducedresolutionimg),
+title('Resolution now 16 x 16');

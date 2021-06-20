@@ -1,0 +1,25 @@
+clc;
+close all;
+I = imread('desert.jpg');
+imshow(I);
+Img = rgb2gray(I);
+B1 = edge(Img,'sobel');
+B2 = edge(Img,"canny");
+figure;
+imshowpair(B1,B2,'montage');
+title('Sobel Filter     Canny Filter');
+figure;
+B3 = edge(Img,'canny_old');
+B4 = edge(Img,"log");
+imshowpair(B3,B4,'montage');
+title('CannyOld Filter         Log Filter');
+figure;
+B5 = edge(Img,'prewitt');
+B6 = edge(Img,"approxcanny");
+imshowpair(B5,B6,'montage');
+title('Prewitt Filter         Approxcanny Filter');
+figure;
+B7 = edge(Img,'roberts');
+B8 = edge(Img,"zerocross");
+imshowpair(B7,B8,'montage');
+title('Roberts Filter         Zerocross Filter')

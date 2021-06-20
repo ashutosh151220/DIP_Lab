@@ -1,0 +1,10 @@
+clc;
+close all;
+po = imgetfile;
+I = imread(po);
+figure;
+imshow(I);
+se = strel('disk',5);
+afteropening = imopen(I,se);
+figure;
+imshow(afteropening,[]);
